@@ -1,0 +1,114 @@
+@import "../styles/variables.scss";
+
+.hero {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(124, 58, 237, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(0, 217, 255, 0.1) 0%,
+      transparent 50%
+    );
+
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-greeting {
+    font-size: 1.2rem;
+    color: $text-secondary;
+    margin-bottom: $spacing-sm;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .hero-name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+
+    @media (max-width: $mobile) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .hero-role {
+    font-size: 2rem;
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: $text-secondary;
+    margin-bottom: $spacing-lg;
+    line-height: 1.8;
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+    animation: fadeInUp 0.6s ease-out 0.8s forwards;
+    opacity: 0;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .hero-social {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    animation: fadeInUp 0.6s ease-out 1s forwards;
+    opacity: 0;
+
+    a {
+      color: $text-secondary;
+      font-size: 1.5rem;
+      transition: all $transition-normal;
+
+      &:hover {
+        color: $accent-primary;
+        transform: translateY(-3px) scale(1.2);
+        animation: pulse 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: $spacing-md;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .scroll-icon {
+      font-size: 2rem;
+      color: $text-muted;
+      animation: float 2s ease-in-out infinite;
+    }
+  }
+}

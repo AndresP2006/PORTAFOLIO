@@ -1,0 +1,149 @@
+@import "../styles/variables.scss";
+
+.about {
+  background: $bg-secondary;
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  .about-text {
+    animation: fadeInLeft 0.8s ease-out forwards;
+
+    p {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      line-height: 1.8;
+      margin-bottom: $spacing-lg;
+      text-align: left;
+    }
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .highlight-item {
+    text-align: center;
+    padding: $spacing-md;
+    background: $bg-card;
+    border-radius: $radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all $transition-normal;
+    animation: slideInScale 0.6s ease-out forwards;
+    animation-delay: calc(var(--item-index) * 0.1s);
+    opacity: 0;
+
+    [data-theme="light"] & {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:nth-child(1) {
+      --item-index: 0;
+    }
+    &:nth-child(2) {
+      --item-index: 1;
+    }
+    &:nth-child(3) {
+      --item-index: 2;
+    }
+
+    &:hover {
+      border-color: $accent-primary;
+      transform: translateY(-5px) scale(1.05);
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    .highlight-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: $accent-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: $spacing-xs;
+    }
+
+    .highlight-label {
+      display: block;
+      color: $text-secondary;
+      font-size: 0.9rem;
+    }
+  }
+
+  .about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 0.8s ease-out forwards;
+
+    @media (max-width: $tablet) {
+      order: -1;
+    }
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $radius-lg;
+        display: block;
+        position: relative;
+        z-index: 2;
+        box-shadow: $shadow-lg;
+        transition: all $transition-slow;
+
+        [data-theme="light"] & {
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+      }
+
+      .image-border {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100%;
+        height: 100%;
+        border: 3px solid $accent-primary;
+        border-radius: $radius-lg;
+        z-index: 1;
+        transition: all $transition-slow;
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      &:hover {
+        img {
+          transform: translate(-10px, -10px) scale(1.02);
+        }
+
+        .image-border {
+          top: 30px;
+          left: 30px;
+          border-color: $accent-secondary;
+          animation: rotate 20s linear infinite;
+        }
+      }
+    }
+  }
+}

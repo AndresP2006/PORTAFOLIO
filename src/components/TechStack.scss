@@ -1,0 +1,84 @@
+@import "../styles/variables.scss";
+
+.tech-stack {
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: $spacing-md;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .tech-item {
+    background: $bg-card;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all $transition-normal;
+    animation: slideInScale 0.5s ease-out forwards;
+    animation-delay: calc(var(--item-index) * 0.05s);
+    opacity: 0;
+
+    [data-theme="light"] & {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:nth-child(1) {
+      --item-index: 0;
+    }
+    &:nth-child(2) {
+      --item-index: 1;
+    }
+    &:nth-child(3) {
+      --item-index: 2;
+    }
+    &:nth-child(4) {
+      --item-index: 3;
+    }
+    &:nth-child(5) {
+      --item-index: 4;
+    }
+    &:nth-child(6) {
+      --item-index: 5;
+    }
+    &:nth-child(7) {
+      --item-index: 6;
+    }
+    &:nth-child(8) {
+      --item-index: 7;
+    }
+    &:nth-child(9) {
+      --item-index: 8;
+    }
+    &:nth-child(10) {
+      --item-index: 9;
+    }
+    &:nth-child(11) {
+      --item-index: 10;
+    }
+    &:nth-child(12) {
+      --item-index: 11;
+    }
+
+    &:hover {
+      border-color: $accent-primary;
+      transform: translateY(-8px) scale(1.1) rotate(2deg);
+      box-shadow: $shadow-glow;
+      animation: pulse 0.8s ease-in-out infinite;
+    }
+
+    .tech-name {
+      font-size: 1rem;
+      color: $text-primary;
+      font-weight: 600;
+    }
+
+    .tech-category {
+      font-size: 0.75rem;
+      color: $text-muted;
+      margin-top: $spacing-xs;
+      text-transform: uppercase;
+    }
+  }
+}

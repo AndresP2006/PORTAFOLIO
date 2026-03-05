@@ -1,0 +1,29 @@
+@import "../styles/variables.scss";
+
+.footer {
+  background: $bg-secondary;
+  padding: $spacing-lg 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-secondary;
+    font-size: 1rem;
+    margin-bottom: $spacing-sm;
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .footer-copyright {
+    color: $text-muted;
+    font-size: 0.9rem;
+  }
+}

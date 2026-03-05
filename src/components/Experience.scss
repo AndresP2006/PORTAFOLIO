@@ -1,0 +1,120 @@
+@import "../styles/variables.scss";
+
+.experience {
+  .experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, $accent-primary, $accent-secondary);
+
+      @media (max-width: $mobile) {
+        left: 20px;
+      }
+    }
+  }
+
+  .experience-item {
+    position: relative;
+    margin-bottom: $spacing-lg;
+
+    &:nth-child(odd) {
+      padding-right: 50%;
+      padding-left: 0;
+      text-align: right;
+
+      @media (max-width: $mobile) {
+        padding-right: 0;
+        padding-left: 60px;
+        text-align: left;
+      }
+
+      .experience-content {
+        margin-right: $spacing-md;
+
+        @media (max-width: $mobile) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      padding-left: 50%;
+      padding-right: 0;
+
+      @media (max-width: $mobile) {
+        padding-left: 60px;
+      }
+
+      .experience-content {
+        margin-left: $spacing-md;
+
+        @media (max-width: $mobile) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .experience-dot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: $accent-primary;
+      border-radius: 50%;
+      border: 3px solid $bg-primary;
+      box-shadow: $shadow-glow;
+
+      @media (max-width: $mobile) {
+        left: 20px;
+      }
+    }
+
+    .experience-content {
+      background: $bg-card;
+      padding: $spacing-md;
+      border-radius: $radius-md;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all $transition-normal;
+
+      &:hover {
+        border-color: $accent-primary;
+        transform: translateY(-5px);
+      }
+    }
+
+    .experience-period {
+      color: $accent-primary;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: $spacing-xs;
+    }
+
+    .experience-title {
+      font-size: 1.3rem;
+      color: $text-primary;
+      margin-bottom: $spacing-xs;
+    }
+
+    .experience-company {
+      color: $text-secondary;
+      font-size: 1rem;
+      margin-bottom: $spacing-sm;
+    }
+
+    .experience-description {
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+  }
+}
