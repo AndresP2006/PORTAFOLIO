@@ -1,6 +1,7 @@
 import React from "react";
-import { FiMail, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
 import { personalInfo } from "../data/portfolio";
+import ContactForm from "./ContactForm";
 import "./Contact.scss";
 
 const Contact = () => {
@@ -12,9 +13,15 @@ const Contact = () => {
           <div className="contact-text">
             <h3>¿Tienes un proyecto en mente?</h3>
             <p>
-              Estoy disponible para nuevas oportunidades y colaboraciones. No
-              dudes en contactarme.
+              Estoy disponible para nuevas oportunidades y colaboraciones.
+              Completa el formulario o contáctame directamente.
             </p>
+          </div>
+
+          <ContactForm />
+
+          <div className="contact-divider">
+            <span>O contáctame por</span>
           </div>
 
           <div className="contact-methods">
@@ -50,16 +57,6 @@ const Contact = () => {
                 <span className="contact-label">LinkedIn</span>
                 <span className="contact-value">Andres Pereira</span>
               </div>
-            </a>
-          </div>
-
-          <div className="contact-cta">
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="btn btn-primary"
-            >
-              <FiSend style={{ marginRight: "0.5rem" }} />
-              Enviar Mensaje
             </a>
           </div>
         </div>

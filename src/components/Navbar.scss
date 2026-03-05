@@ -1,0 +1,156 @@
+@import "../styles/variables.scss";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1rem 0;
+  transition: all $transition-normal;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  [data-theme="light"] & {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  &.scrolled {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 0;
+
+    [data-theme="light"] & {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  .navbar-logo {
+    cursor: pointer;
+    transition: transform $transition-normal;
+    flex-shrink: 0;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: $accent-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    margin-right: 60px;
+
+    @media (max-width: $tablet) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 70%;
+      max-width: 300px;
+      background: $bg-secondary;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-lg;
+      transition: right $transition-normal;
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+      margin-right: 0;
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    li {
+      .nav-link {
+        background: none;
+        border: none;
+        color: $text-secondary;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 0.5rem 0.75rem;
+        border-radius: $radius-sm;
+        transition: all $transition-normal;
+        position: relative;
+        white-space: nowrap;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%) scaleX(0);
+          width: 80%;
+          height: 2px;
+          background: $accent-gradient;
+          transition: transform $transition-normal;
+        }
+
+        &:hover {
+          color: $accent-primary;
+          transform: translateY(-2px);
+        }
+
+        &.active {
+          color: $accent-primary;
+
+          &::after {
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
+
+        @media (max-width: $tablet) {
+          font-size: 1.2rem;
+          padding: 0.75rem 1.5rem;
+        }
+      }
+    }
+  }
+
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $text-primary;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform $transition-normal;
+    flex-shrink: 0;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $accent-primary;
+    }
+
+    @media (max-width: $tablet) {
+      display: block;
+    }
+  }
+}

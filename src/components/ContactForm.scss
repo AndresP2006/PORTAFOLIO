@@ -1,0 +1,110 @@
+@import "../styles/variables.scss";
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out forwards;
+
+  .form-group {
+    margin-bottom: $spacing-md;
+
+    label {
+      display: block;
+      color: $text-primary;
+      font-weight: 600;
+      margin-bottom: $spacing-xs;
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: $spacing-sm;
+      background: $bg-card;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: $radius-sm;
+      color: $text-primary;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all $transition-normal;
+
+      [data-theme="light"] & {
+        border-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $accent-primary;
+        box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+      }
+
+      &::placeholder {
+        color: $text-muted;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    font-size: 1.1rem;
+    padding: $spacing-sm $spacing-md;
+    margin-top: $spacing-md;
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+  }
+
+  .form-message {
+    margin-top: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-sm;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-weight: 500;
+    animation: slideInScale 0.3s ease-out forwards;
+
+    &.success {
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    &.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

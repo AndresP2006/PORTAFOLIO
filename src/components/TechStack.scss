@@ -63,9 +63,8 @@
 
     &:hover {
       border-color: $accent-primary;
-      transform: translateY(-8px) scale(1.1) rotate(2deg);
+      transform: translateY(-5px);
       box-shadow: $shadow-glow;
-      animation: pulse 0.8s ease-in-out infinite;
     }
 
     .tech-name {

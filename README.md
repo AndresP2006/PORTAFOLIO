@@ -1,99 +1,192 @@
-# Portafolio Profesional - Andres Pereira
+# 🚀 Portafolio Profesional - Andres Pereira
 
-Portafolio web moderno y minimalista para desarrollador Full Stack.
+Portafolio web moderno y minimalista para desarrollador Full Stack con animaciones avanzadas, tema claro/oscuro y formulario de contacto.
 
-## 🚀 Tecnologías
+## ✨ Características
+
+- 🎨 Diseño moderno con modo claro/oscuro
+- 🌊 Fondo animado con cuadros flotantes
+- 📱 Completamente responsive
+- 🎭 Animaciones suaves y profesionales
+- 📧 Formulario de contacto funcional
+- 🧭 Navbar sticky con detección de sección activa
+- 📊 Estadísticas de GitHub integradas
+- ⚡ Optimizado para rendimiento
+- 🔍 SEO optimizado con Open Graph tags
+
+## 🛠️ Tecnologías
 
 - React 18
 - Vite
 - SCSS
 - React Icons
+- Context API (gestión de tema)
 
 ## 📦 Instalación
 
 ```bash
+# Instalar dependencias
 npm install
-```
 
-## 🛠️ Desarrollo
-
-```bash
+# Modo desarrollo
 npm run dev
+
+# Build para producción
+npm run build
+
+# Preview del build
+npm run preview
 ```
 
-## 🏗️ Build
+## 🎨 Personalización
 
+### 1. Datos Personales
+Edita `src/data/portfolio.js`:
+```javascript
+export const personalInfo = {
+  name: "Tu Nombre",
+  role: "Tu Rol",
+  email: "tu@email.com",
+  github: "https://github.com/tu-usuario",
+  linkedin: "https://linkedin.com/in/tu-usuario"
+};
+```
+
+### 2. Proyectos
+Actualiza el array `projects` en `src/data/portfolio.js` con tus proyectos reales.
+
+### 3. Experiencia
+Modifica el array `experience` con tu trayectoria profesional.
+
+### 4. Tecnologías
+Edita el array `techStack` con las tecnologías que dominas.
+
+### 5. Colores y Estilos
+Los colores están en `src/styles/variables.scss`:
+```scss
+$accent-primary: #00d9ff;
+$accent-secondary: #7c3aed;
+```
+
+### 6. GitHub Stats
+En `src/components/Contact.jsx`, cambia el username:
+```jsx
+<GitHubStats username="tu-usuario-github" />
+```
+
+## 📧 Configurar Formulario de Contacto
+
+El formulario actualmente simula el envío. Para hacerlo funcional:
+
+### Opción 1: EmailJS (Recomendado)
+```bash
+npm install @emailjs/browser
+```
+
+En `src/components/ContactForm.jsx`, descomenta y configura:
+```javascript
+import emailjs from '@emailjs/browser';
+
+await emailjs.send(
+  'YOUR_SERVICE_ID',
+  'YOUR_TEMPLATE_ID',
+  formData,
+  'YOUR_PUBLIC_KEY'
+);
+```
+
+### Opción 2: Formspree
+```jsx
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+```
+
+### Opción 3: Tu propio backend
+Crea una API y actualiza la función `handleSubmit`.
+
+## 🚀 Despliegue
+
+### Vercel (Recomendado)
+```bash
+npm install -g vercel
+vercel
+```
+
+### Netlify
 ```bash
 npm run build
+# Arrastra la carpeta dist/ a Netlify
 ```
 
-## 📝 Personalización
+### GitHub Pages
+```bash
+npm install gh-pages --save-dev
+```
 
-### Datos Personales
-Edita `src/data/portfolio.js` para actualizar:
-- Información personal
-- Proyectos
-- Experiencia
-- Tecnologías
+Agrega a `package.json`:
+```json
+"scripts": {
+  "deploy": "gh-pages -d dist"
+}
+```
 
-### Estilos
-Los colores y variables están en `src/styles/variables.scss`
+## 📁 Estructura del Proyecto
 
-### Imágenes de Proyectos
-Coloca las imágenes en `public/projects/` y actualiza las rutas en `portfolio.js`
+```
+portfolio/
+├── public/
+│   ├── favicon.svg
+│   └── projects/
+├── src/
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── AnimatedBackground.jsx
+│   │   ├── Contact.jsx
+│   │   ├── ContactForm.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Footer.jsx
+│   │   ├── GitHubStats.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Projects.jsx
+│   │   ├── TechStack.jsx
+│   │   └── ThemeToggle.jsx
+│   ├── context/
+│   │   └── ThemeContext.jsx
+│   ├── data/
+│   │   └── portfolio.js
+│   ├── styles/
+│   │   ├── globals.scss
+│   │   └── variables.scss
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
-## 💡 Ideas de Proyectos para Mostrar
+## 🎯 Próximas Mejoras Sugeridas
 
-1. **E-Commerce Platform** - Tienda online completa con carrito y pagos
-2. **Task Management App** - Sistema de gestión de tareas tipo Trello
-3. **API RESTful** - Backend con autenticación y CRUD completo
-4. **Blog CMS** - Sistema de gestión de contenido
-5. **Dashboard Analytics** - Panel de métricas y estadísticas
-6. **Chat Application** - App de mensajería en tiempo real
-7. **Weather App** - Aplicación del clima con API externa
-8. **Portfolio Generator** - Generador de portafolios dinámicos
+- [ ] Agregar más proyectos con imágenes reales
+- [ ] Implementar blog con MDX
+- [ ] Agregar sección de certificaciones
+- [ ] Implementar filtros en proyectos
+- [ ] Agregar tests con Vitest
+- [ ] Implementar i18n (ES/EN)
+- [ ] Agregar Google Analytics
+- [ ] Crear sitemap.xml
+- [ ] Optimizar imágenes con WebP
+- [ ] Implementar PWA
 
-## 🎨 Sugerencias de Mejora
-
-### Contenido
-- Agrega un blog técnico para compartir conocimientos
-- Incluye certificaciones y cursos completados
-- Añade testimonios de clientes o colaboradores
-- Crea casos de estudio detallados de proyectos
-
-### Funcionalidad
-- Implementa modo claro/oscuro toggle
-- Agrega animaciones con Framer Motion
-- Incluye un formulario de contacto funcional
-- Implementa internacionalización (i18n)
-
-### SEO y Performance
-- Optimiza imágenes (WebP, lazy loading)
-- Implementa meta tags para redes sociales
-- Agrega sitemap.xml
-- Configura Google Analytics
-
-### Técnico
-- Agrega tests con Vitest
-- Implementa CI/CD con GitHub Actions
-- Configura ESLint y Prettier
-- Usa TypeScript para mayor robustez
-
-## 📱 Responsive
-
-El diseño es completamente responsive:
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
-
-## 🎯 Próximos Pasos
-
-1. Reemplaza `[email]` en `portfolio.js` con tu email real
-2. Actualiza los enlaces de GitHub y LinkedIn
-3. Agrega imágenes reales de tus proyectos
-4. Personaliza los colores en `variables.scss`
-5. Despliega en Vercel, Netlify o GitHub Pages
-
-## 📄 Licencia
+## 📝 Licencia
 
 MIT - Libre para uso personal y comercial
+
+## 👤 Autor
+
+**Andres Pereira**
+- GitHub: [@andrespereira](https://github.com/andrespereira)
+- LinkedIn: [Andres Pereira](https://linkedin.com/in/andrespereira)
+
+---
+
+⭐ Si te gustó este proyecto, dale una estrella en GitHub!
