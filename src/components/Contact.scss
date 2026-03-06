@@ -17,11 +17,19 @@
       font-size: 2rem;
       margin-bottom: $spacing-sm;
       color: $text-primary;
+
+      @media (max-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
 
     p {
       font-size: 1.1rem;
       color: $text-secondary;
+
+      @media (max-width: $mobile) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -43,6 +51,10 @@
         rgba(0, 217, 255, 0.3),
         transparent
       );
+
+      @media (max-width: $mobile) {
+        width: 35%;
+      }
     }
 
     &::before {
@@ -60,6 +72,10 @@
       background: $bg-secondary;
       position: relative;
       z-index: 1;
+
+      @media (max-width: $mobile) {
+        font-size: 0.85rem;
+      }
     }
   }
 
@@ -68,6 +84,11 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: $spacing-md;
     margin-bottom: $spacing-lg;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm;
+    }
   }
 
   .contact-card {
@@ -86,6 +107,11 @@
 
     [data-theme="light"] & {
       border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-sm;
+      gap: $spacing-sm;
     }
 
     &:nth-child(1) {
@@ -113,22 +139,39 @@
       font-size: 2rem;
       color: $text-secondary;
       transition: all $transition-normal;
+      flex-shrink: 0;
+
+      @media (max-width: $mobile) {
+        font-size: 1.5rem;
+      }
     }
 
     .contact-info {
       display: flex;
       flex-direction: column;
+      min-width: 0;
+      flex: 1;
 
       .contact-label {
         font-size: 0.85rem;
         color: $text-muted;
         margin-bottom: 0.25rem;
+
+        @media (max-width: $mobile) {
+          font-size: 0.75rem;
+        }
       }
 
       .contact-value {
         font-size: 1rem;
         color: $text-primary;
         font-weight: 600;
+        word-break: break-word;
+        overflow-wrap: break-word;
+
+        @media (max-width: $mobile) {
+          font-size: 0.85rem;
+        }
       }
     }
   }

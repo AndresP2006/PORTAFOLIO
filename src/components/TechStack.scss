@@ -7,6 +7,16 @@
     gap: $spacing-md;
     max-width: 900px;
     margin: 0 auto;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-sm;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xs;
+    }
   }
 
   .tech-item {
@@ -22,6 +32,10 @@
 
     [data-theme="light"] & {
       border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: $mobile) {
+      padding: $spacing-sm;
     }
 
     &:nth-child(1) {
@@ -71,6 +85,10 @@
       font-size: 1rem;
       color: $text-primary;
       font-weight: 600;
+
+      @media (max-width: $mobile) {
+        font-size: 0.9rem;
+      }
     }
 
     .tech-category {
@@ -78,6 +96,10 @@
       color: $text-muted;
       margin-top: $spacing-xs;
       text-transform: uppercase;
+
+      @media (max-width: $mobile) {
+        font-size: 0.65rem;
+      }
     }
   }
 }
