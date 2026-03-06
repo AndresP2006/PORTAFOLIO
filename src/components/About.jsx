@@ -12,7 +12,7 @@ const About = () => {
             <p>{about.description}</p>
             <div className="about-highlights">
               <div className="highlight-item">
-                <span className="highlight-number">2+</span>
+                <span className="highlight-number">1+</span>
                 <span className="highlight-label">Años de Experiencia</span>
               </div>
               <div className="highlight-item">

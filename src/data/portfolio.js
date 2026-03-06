@@ -1,20 +1,19 @@
+import Perfil from "../assets/Perfil.png";
+
 export const personalInfo = {
   name: "Andres Pereira",
   role: "Desarrollador Full Stack",
   tagline:
     "Construyendo experiencias web modernas con código limpio y arquitecturas escalables",
-  email: "[email]",
-  github: "https://github.com/andrespereira",
-  linkedin: "https://linkedin.com/in/andrespereira",
+  email: "pereirapuelloandresdavid@gmail.com",
+  github: "https://github.com/AndresP2006",
+  linkedin:
+    "https://www.linkedin.com/in/andres-david-pereira-puello-8374ba33b/",
 };
 
 export const about = {
-  description: `Soy un desarrollador full stack apasionado por crear soluciones web eficientes y escalables. 
-  Con experiencia en el desarrollo de aplicaciones completas, desde el diseño de interfaces de usuario 
-  hasta la implementación de APIs robustas y bases de datos optimizadas. Me especializo en arquitectura MVC 
-  y busco constantemente mejorar la calidad del software mediante buenas prácticas y testing.`,
-  image:
-    "https://i.pinimg.com/736x/e6/d1/d5/e6d1d53634a5e455c4979dd8e1f0162c.jpg",
+  description: `Soy un desarrollador junior con interés en el desarrollo full stack y en la calidad del software. Tengo conocimientos en la creación de aplicaciones web, participando tanto en el desarrollo de interfaces y APIs como en la realización de pruebas para asegurar el correcto funcionamiento de las funcionalidades. Me interesa trabajar con arquitecturas como MVC, aprender buenas prácticas de desarrollo y aplicar testing para mejorar continuamente la calidad del software.`,
+  image: Perfil,
 };
 
 export const techStack = [
@@ -24,7 +23,7 @@ export const techStack = [
   { name: "Next.js", category: "frontend" },
   { name: "HTML5", category: "frontend" },
   { name: "CSS3", category: "frontend" },
-  { name: "SCSS", category: "frontend" },
+  { name: "Tailwind", category: "frontend" },
   { name: "Node.js", category: "backend" },
   { name: "PHP", category: "backend" },
   { name: "MySQL", category: "database" },
@@ -78,18 +77,18 @@ export const projects = [
 export const experience = [
   {
     id: 1,
-    title: "Desarrollador Full Stack",
-    company: "Proyectos Freelance",
-    period: "2023 - Presente",
+    title: "Practicante de QA (Quality Assurance)",
+    company: "GBM",
+    period: "2025 - 2026",
     description:
-      "Desarrollo de aplicaciones web completas utilizando React, Node.js y MySQL. Implementación de arquitecturas MVC y APIs RESTful.",
+      "Apoya en la verificación de la calidad del software realizando pruebas funcionales, reportando errores y validando que las funcionalidades cumplan con los requisitos establecidos antes de su liberación",
   },
   {
     id: 2,
-    title: "Formación en Desarrollo Web",
-    company: "Autodidacta / Cursos Online",
-    period: "2022 - 2023",
+    title: "Ingeniero de QA (Quality Assurance)",
+    company: "GBN",
+    period: "2026",
     description:
-      "Aprendizaje intensivo de tecnologías frontend y backend, bases de datos SQL, y mejores prácticas de desarrollo.",
+      "Responsable de asegurar la calidad del software mediante el diseño y ejecución de pruebas, identificación y seguimiento de defectos, y validación de que las aplicaciones cumplan con los requisitos funcionales y estándares de calidad antes de su liberación.",
   },
 ];
