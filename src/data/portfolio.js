@@ -1,4 +1,6 @@
 import Perfil from "../assets/Perfil.png";
+import CDA from "../assets/CDA.png";
+import Portafolio from "../assets/Portafolio.png";
 
 export const personalInfo = {
   name: "Andres Pereira",
@@ -29,48 +31,56 @@ export const techStack = [
   { name: "MySQL", category: "database" },
   { name: "Git", category: "tools" },
   { name: "MVC", category: "architecture" },
+  { name: "NestJs", category: "backend" },
+  { name: "MongoDB", category: "database" },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Control de Acceso",
     description:
-      "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pagos y panel de administración.",
-    technologies: ["React", "Node.js", "MySQL", "SCSS"],
-    github: "https://github.com/andrespereira/ecommerce",
-    demo: "https://demo-ecommerce.com",
-    image: "/projects/ecommerce.jpg",
+      "Plataforma de control de entrada y salida de visitantes y residentes en conjuntos residenciales.",
+    technologies: ["React", "PHP", "MySQL", "SCSS"],
+    github: "https://github.com/AndresP2006/Control-de-acceso.git",
+    image: CDA,
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "e-commerce",
     description:
-      "Aplicación de gestión de tareas con autenticación, asignación de proyectos y seguimiento en tiempo real.",
-    technologies: ["Next.js", "TypeScript", "Node.js", "MySQL"],
-    github: "https://github.com/andrespereira/task-manager",
-    demo: "https://demo-tasks.com",
-    image: "/projects/tasks.jpg",
+      "Tienda online desarrollada desde cero que permite visualizar productos y gestionar un carrito de compras.",
+    technologies: ["React.js", "Javascript", "Node.js", "MySQL"],
+    github: "https://github.com/AndresP2006/SHOPING.git",
+    // demo: "https://demo-tasks.com",
+    // image: "/projects/tasks.jpg",
   },
   {
     id: 3,
-    title: "API RESTful Blog",
+    title: "Conjuntly",
     description:
       "API REST completa para un sistema de blog con autenticación JWT, CRUD de posts y sistema de comentarios.",
-    technologies: ["Node.js", "PHP", "MySQL", "MVC"],
-    github: "https://github.com/andrespereira/blog-api",
+    technologies: [
+      "Node.js",
+      "Typescript",
+      "React.js",
+      "Tailwind",
+      "MySQL",
+      "MVC",
+    ],
+    github: "https://github.com/AndresP2006/Conjuntly.git",
     demo: null,
-    image: "/projects/api.jpg",
+    // image: "/projects/api.jpg",
   },
   {
     id: 4,
-    title: "Portfolio CMS",
+    title: "Portfolio",
     description:
-      "Sistema de gestión de contenido para portafolios con editor visual y generación de sitios estáticos.",
-    technologies: ["React", "TypeScript", "Node.js", "SCSS"],
-    github: "https://github.com/andrespereira/portfolio-cms",
-    demo: "https://demo-cms.com",
-    image: "/projects/cms.jpg",
+      "Portafolio web personal desarrollado para presentar mis proyectos, habilidades y experiencia como desarrollador.",
+    technologies: ["React", "TypeScript", "SCSS"],
+    github: "https://github.com/AndresP2006/PORTAFOLIO.git",
+    demo: "https://andrespereira.vercel.app/",
+    image: Portafolio,
   },
 ];
 
@@ -79,7 +89,7 @@ export const experience = [
     id: 1,
     title: "Practicante de QA (Quality Assurance)",
     company: "GBM",
-    period: "2025 - 2026",
+    period: "AGO 2025 – FEB 2026",
     description:
       "Apoya en la verificación de la calidad del software realizando pruebas funcionales, reportando errores y validando que las funcionalidades cumplan con los requisitos establecidos antes de su liberación",
   },
@@ -87,7 +97,7 @@ export const experience = [
     id: 2,
     title: "Ingeniero de QA (Quality Assurance)",
     company: "GBN",
-    period: "2026",
+    period: "FEB 2026",
     description:
       "Responsable de asegurar la calidad del software mediante el diseño y ejecución de pruebas, identificación y seguimiento de defectos, y validación de que las aplicaciones cumplan con los requisitos funcionales y estándares de calidad antes de su liberación.",
   },

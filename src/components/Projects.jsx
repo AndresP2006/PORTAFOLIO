@@ -13,7 +13,15 @@ const Projects = () => {
             <div key={project.id} className="project-card">
               <div className="project-image-container">
                 <div className="project-placeholder">
-                  <FiCode />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image"
+                    />
+                  ) : (
+                    <FiCode />
+                  )}
                 </div>
               </div>
               <div className="project-content">
