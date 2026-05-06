@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FiSend, FiCheck, FiAlertCircle } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 import "./ContactForm.scss";
+
+// Inicializar EmailJS
+emailjs.init("hi1_r4E0BvjQN0WZ4");
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +13,7 @@ const ContactForm = () => {
     message: "",
   });
   const [status, setStatus] = useState("idle"); // idle, sending, success, error
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -20,31 +25,27 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMessage("");
 
-    // Simular envío (reemplazar con EmailJS o tu backend)
-    setTimeout(() => {
-      console.log("Form data:", formData);
+    try {
+      await emailjs.send("service_xktakn6", "template_04bn0jm", {
+        to_email: "apereira13@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      });
+
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
 
       setTimeout(() => setStatus("idle"), 5000);
-    }, 2000);
-
-    // Ejemplo con EmailJS (descomentar cuando configures):
-    /*
-    try {
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        formData,
-        'YOUR_PUBLIC_KEY'
-      );
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      setStatus('error');
+      console.error("Error enviando email:", error);
+      setStatus("error");
+      setErrorMessage("Hubo un error al enviar el mensaje. Intenta de nuevo.");
+
+      setTimeout(() => setStatus("idle"), 5000);
     }
-    */
   };
 
   return (
@@ -124,7 +125,7 @@ const ContactForm = () => {
       {status === "error" && (
         <div className="form-message error">
           <FiAlertCircle />
-          Hubo un error. Intenta de nuevo o contáctame directamente.
+          {errorMessage}
         </div>
       )}
     </form>
